@@ -63,7 +63,7 @@ function parse(text)
 	-- 标签头栈，用于存储标签头(<div>是标签头，</div>是标签尾)
 	-- 标签头存储了格式信息，碰到标签时可以直接使用当前栈顶的标签头格式信息，应用到标签之间的内容上
 	local labelheadstack = {}
-	-- 迭代所有格式为<xxx>的标签(包含了标签头和标签尾巴)
+	-- 迭代所有格式为<xxx>的标签(包含了标签头和标签尾)
 	local beginindex, endindex = string.find(text, "%b<>", 1)
 	while beginindex do
 		-- 获得当前标签
