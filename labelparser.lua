@@ -35,6 +35,7 @@
 	        labelname = "div",
 	    },
 	}
+	当前版本：v1.0
 ]]--
 
 local print = print
