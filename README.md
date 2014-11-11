@@ -11,3 +11,30 @@ labelparser
 *	若开头和结尾没有标签的话，内部会自动在最外层包上一层<div></div>(可以修改LABEL_DIV_BEGIN从而包上其他标签)
 *	暂不支持自闭和标签，必须是标签头和标签尾配对
 *	标签范围不可交叉，但是可以嵌套包含
+
+####示例：
+```javascript
+	local text1 = "hello worldd   <div>hello world</div> 你好 <div fontName='nihao' fontSize=#123456>hello,world</div><div></div>"
+	local parsedtable = labelparser.parse(text1)
+	-- output:
+	<parsedtable> = {
+	    {
+	        content = "hello worldd   ",
+	        labelname = "div",
+	    },
+	    {
+	        content = "hello world",
+	        labelname = "div",
+	    },
+	    {
+	        content = " 你好 ",
+	        labelname = "div",
+	    },
+	    {
+	        content = "hello,world",
+	        fontname = "nihao",
+	        fontsize = "#123456",
+	        labelname = "div",
+	    },
+	}
+	```
