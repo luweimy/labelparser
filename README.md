@@ -13,6 +13,8 @@ labelparser
 * 暂不支持自闭和标签，必须是标签头和标签尾配对
 * 标签范围不可交叉，但是可以嵌套包含
 
+[**详细讲解**](http://www.cnblogs.com/luweimy/p/4098380.html)
+
 ####示例：
 ```
 local text1 = "hello worldd   <div>hello world</div> 你好 <div fontName='nihao' fontColore=#ff33ee>hello,world</div><div></div>"
@@ -39,5 +41,3 @@ local parsedtable = labelparser.parse(text1)
     },
 }
 ```
-
-[详细讲解](http://www.cnblogs.com/luweimy/p/4098380.html)
