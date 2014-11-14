@@ -1,5 +1,6 @@
 labelparser
 ===========
+
 ####一个类XML标签解析库，将标签解析成Lua中的表结构####
 支持Lua5.1, 只是使用了setfenv函数，lua5.2可以删除此函数
 * 被解析的富文本不能含有"<xxx>"这种样式的字符串, 单独的'<', '>'是可以支持的，但是为了避免解析错误最好不要使用
@@ -13,28 +14,30 @@ labelparser
 * 标签范围不可交叉，但是可以嵌套包含
 
 ####示例：
-```javascript
-	local text1 = "hello worldd   <div>hello world</div> 你好 <div fontName='nihao' fontColore=#ff33ee>hello,world</div><div></div>"
-	local parsedtable = labelparser.parse(text1)
-	-- output:
-	<parsedtable> = {
-	    {
-	        content = "hello worldd   ",
-	        labelname = "div",
-	    },
-	    {
-	        content = "hello world",
-	        labelname = "div",
-	    },
-	    {
-	        content = " 你好 ",
-	        labelname = "div",
-	    },
-	    {
-	        content = "hello,world",
-	        fontname = "nihao",
-	        fontsize = "#123456",
-	        labelname = "div",
-	    },
-	}
-	```
+```
+local text1 = "hello worldd   <div>hello world</div> 你好 <div fontName='nihao' fontColore=#ff33ee>hello,world</div><div></div>"
+local parsedtable = labelparser.parse(text1)
+-- output:
+<parsedtable> = {
+    {
+        content = "hello worldd   ",
+        labelname = "div",
+    },
+    {
+        content = "hello world",
+        labelname = "div",
+    },
+    {
+        content = " 你好 ",
+        labelname = "div",
+    },
+    {
+        content = "hello,world",
+        fontname = "nihao",
+        fontsize = "#123456",
+        labelname = "div",
+    },
+}
+```
+
+[详细讲解](http://www.cnblogs.com/luweimy/p/4098380.html)
