@@ -145,7 +145,7 @@ function parseLabelname(label)
 	end
 	-- 获得标签名称
 	local labelname = string.sub(label, labelnameindex1, labelnameindex2)
-	local labelname = string.lower(labelname)
+	labelname = string.lower(labelname)
 	return labelname
 end
 
